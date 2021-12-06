@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "ce90566d-663c-40d3-a6dc-711069aaf05a",
+		"name": "插入",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "新增教室(ADMIN)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Classroom\": {\r\n        \"name\": \"水系中介班\",\r\n        \"description\": \"水系中介班, 高级水系魔法班预备班\"\r\n    },\r\n    \"tag\": \"addClassRoom\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/post",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增课程(TEACHER/ADMIN)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Course\": {\r\n        \"name\": \"早教儿童文学课程\",\r\n        \"description\": \"课程简介暂无...\",\r\n        \"start_date\": \"2021-12-10\",\r\n        \"end_date\": \"2021-12-11\",\r\n        \"userId\": 1,\r\n        \"classroomId\": 1\r\n    },\r\n    \"tag\": \"+course\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/post",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增公共信息(ADMIN)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Message\": {\r\n        \"title\": \"全体公告\",\r\n        \"description\": \"好课推荐\"\r\n    },\r\n    \"tag\": \"+msg\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/post",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增评论(OWNER)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Comment\": {\r\n        \"content\": \"哈哈哈哈, 很好的一节课\",\r\n        \"userId\": 2,\r\n        \"courseId\": 4\r\n    },\r\n    \"tag\": \"+comment\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/post",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

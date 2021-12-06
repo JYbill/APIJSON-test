@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "57116524-6770-4b97-b5f2-53eb8879c562",
+		"name": "修改",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "修改个人信息",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// 管理员级别一下修改\r\n{\r\n    \"User\": {\r\n        \"id\": 1,\r\n        \"nikename\": \"小明TEACHER\"\r\n    },\r\n    \"tag\": \"updSelfInfo\"\r\n}\r\n\r\n// 管理员级别修改\r\n// {\r\n//     \"User\": {\r\n//         \"id\": 1,\r\n//         \"nikename\": \"小明TEACHER\",\r\n//         \"@role\": \"ADMIN\"\r\n//     },\r\n//     \"tag\": \"updSelfInfo\"\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/put",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"put"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改课程信息(TEACHER/ADMIN)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Course\": {\r\n        \"id\": 6,\r\n        \"name\": \"测试修改课程哈哈哈\",\r\n        \"description\": \"测试描述1\",\r\n        \"start_date\": \"2021-12-6\",\r\n        \"end_date\": \"2021-12-7\",\r\n        \"classroomId\": 7\r\n    },\r\n    \"tag\": \"updSelfCourse\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/put",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"put"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改教室信息(ADMIN)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Classroom\": {\r\n        \"id\": 1,\r\n        \"name\": \"魔法1班\",\r\n        \"description\": \"精通水系魔法, 中介魔法预备班\"\r\n    },\r\n    \"tag\": \"updClassroom\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/put",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"put"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改评论(OWNER)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Comment\": {\r\n        \"id\": 1638778443325,\r\n        \"content\": \"admin修改评论测试...\",\r\n        \"@role\": \"ADMIN\"\r\n    },\r\n    \"tag\": \"updComment\"\r\n}\r\n// {\r\n//     \"Comment\": {\r\n//         \"MUST\": \"id, userId, content\",\r\n//         \"REFUSE\": \"create_date, update_date, courseId\",\r\n//         \"UPDATE\": {\r\n//             \"@role\": \"OWNER\"\r\n//         }\r\n//     }\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/put",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"put"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改公共信息(ADMIN)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Message\": {\r\n        \"id\": 1638707124124,\r\n        \"title\": \"VIP通知\",\r\n        \"description\": \"推荐课程\",\r\n        \"courseId+\": [3]\r\n    },\r\n    \"tag\": \"updMsg\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/put",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"put"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

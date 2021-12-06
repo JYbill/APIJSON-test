@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "7b0f5986-408f-41c7-9892-2f398e7aca63",
+		"name": "查询",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "分页课程+上课班级",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"[]\": {\r\n        \"Course\": {\r\n            \"@column\": \"id;name;description;start_date;end_date;classroomId;datediff(end_date,now()):rest_day\"\r\n        },\r\n        \"Classroom\": {\r\n            \"id@\": \"/Course/classroomId\"\r\n        },\r\n        \"page\": 0,\r\n        \"count\": 5,\r\n        \"query\": 2\r\n    },\r\n    \"total@\": \"/[]/total\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/get",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查询自己的信息",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"User\":{\r\n        \"@role\": \"OWNER\"\r\n    },\r\n    \"Credential\": {\r\n        \"@role\": \"OWNER\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/get",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查询所有用户信息(ADMIN)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"[]\": {\r\n        \"User\": {\r\n            \"@role\": \"ADMIN\"\r\n        },\r\n        \"Credential\": {\r\n            \"userId@\": \"/User/id\",\r\n            \"@role\": \"ADMIN\"\r\n        },\r\n        \"page\": 0,\r\n        \"count\": 5,\r\n        \"query\": 2\r\n    },\r\n    \"total@\": \"/[]/total\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/get",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查询课程详情",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Course\": {\r\n        \"id\": 1\r\n    },\r\n    \"User\": {\r\n        \"id@\": \"/Course/userId\"\r\n    },\r\n    \"Classroom\": {\r\n        \"id@\": \"/Course/classroomId\" \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/get",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查询老师自己的的课程信息",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"User\": {\r\n        \"@role\": \"OWNER\"\r\n    },\r\n    \"[]\": {\r\n        \"Course\": {\r\n            \"@role\": \"OWNER\"\r\n        },\r\n        \"page\": 0,\r\n        \"count\": 5,\r\n        \"query\": 2\r\n    },\r\n    \"total@\": \"/[]/total\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/get",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "模糊分页搜索课程",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"[]\": {\r\n        \"Course\": {\r\n            \"name~\": \"课\"\r\n        },\r\n        \"query\": 2,\r\n        \"page\": 0,\r\n        \"count\": 5\r\n    },\r\n    \"total@\": \"/[]/total\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/get",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查询所有空闲教室",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"[]\": {\r\n        \"Classroom\": {\r\n            \"status\": 0\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/get",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

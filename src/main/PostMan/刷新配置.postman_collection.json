@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "9d755f7f-4bfd-48a6-a8f3-b927d94c5a09",
+		"name": "刷新配置",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "刷新配置",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/reload",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"reload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
