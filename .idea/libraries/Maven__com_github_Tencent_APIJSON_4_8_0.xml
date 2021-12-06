@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.Tencent:APIJSON:4.8.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/Tencent/APIJSON/4.8.0/APIJSON-4.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/Tencent/APIJSON/4.8.0/APIJSON-4.8.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/Tencent/APIJSON/4.8.0/APIJSON-4.8.0-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/Tencent/APIJSON/4.8.0/APIJSON-4.8.0.jar!/" />
+    </SOURCES>
+  </library>
+</component>
