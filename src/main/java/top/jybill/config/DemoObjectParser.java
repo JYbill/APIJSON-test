@@ -38,6 +38,8 @@ public class DemoObjectParser extends APIJSONObjectParser {
 
     private static final String CREATE_DATE = "create_date";
     private static final String UPDATE_DATE = "update_date";
+
+    // 没经过远程调用函数的POST、PUT请求默认添加时间
     @Override
     public SQLConfig newSQLConfig(RequestMethod method, String table, String alias, JSONObject request, List<Join> joinList, boolean isProcedure) throws Exception {
         if (method == RequestMethod.POST) {
